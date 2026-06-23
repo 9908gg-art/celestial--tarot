@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奧秘之星線上塔羅占卜 | 每日運勢與過去現在未來三牌占卜</title>
+    <meta name="description" content="最唯美專業的線上塔羅牌占卜工具。提供每日一牌指引、過去現在未來三牌時空流占卜。100% 免費、本地隨機抽牌，解答您的愛情、工作與運勢迷惘。">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome 圖示 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 頂部神秘背景與標題 -->
+    <header class="app-header">
+        <div class="header-bg-gradient"></div>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fa-solid fa-eye logo-icon"></i>
+                <span class="logo-text">MysticTarot</span>
+            </div>
+            <h1>奧秘之星線上塔羅牌</h1>
+            <p class="subtitle">靜下心，閉上眼，默想你的問題。讓塔羅牌洗滌靈魂，指引未來的方向</p>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <!-- 占卜模式選擇 -->
+        <section class="card select-mode-card animate-fade-in">
+            <h2 class="card-title"><i class="fa-solid fa-wand-magic-sparkles text-accent"></i> 選擇您的占卜牌陣</h2>
+            <div class="mode-buttons">
+                <button class="btn btn-mode active" id="mode-single" data-mode="single">
+                    <i class="fa-solid fa-id-card"></i>
+                    <div>
+                        <span class="mode-title">每日一牌 (今日指引)</span>
+                        <span class="mode-desc">抽取單張塔羅，獲取今日的專屬能量提示與行動指引。</span>
+                    </div>
+                </button>
+                <button class="btn btn-mode" id="mode-three" data-mode="three">
+                    <i class="fa-solid fa-square-poll-horizontal"></i>
+                    <div>
+                        <span class="mode-title">時間之流 (三牌占卜)</span>
+                        <span class="mode-desc">針對具體問題，剖析事情的「過去、現在、未來」發展。</span>
+                    </div>
+                </button>
+            </div>
+        </section>
+
+        <!-- 塔羅占卜演練面板 -->
+        <section class="card table-card animate-fade-in delay-100" id="tarot-table-section">
+            <div class="table-header">
+                <span class="step-indicator" id="step-text">第一步：請點擊洗牌按鈕</span>
+                <button class="btn btn-secondary btn-sm" id="btn-shuffle">
+                    <i class="fa-solid fa-sync"></i> 均勻洗牌
+                </button>
+            </div>
+
+            <!-- 牌桌 (擺放卡牌的地方) -->
+            <div class="tarot-table">
+                <!-- 每日一牌版面 -->
+                <div class="spread-container single-spread" id="spread-single-box">
+                    <div class="tarot-placeholder" data-slot="0">
+                        <div class="card-inner">
+                            <div class="card-back"></div>
+                            <div class="card-front">
+                                <span class="card-name">?</span>
+                                <span class="card-orientation">?</span>
+                            </div>
+                        </div>
+                        <span class="slot-label">今日啟示</span>
+                    </div>
+                </div>
+
+                <!-- 三牌時間流版面 -->
+                <div class="spread-container three-spread" id="spread-three-box" style="display: none;">
+                    <div class="tarot-placeholder" data-slot="0">
+                        <div class="card-inner">
+                            <div class="card-back"></div>
+                            <div class="card-front">
+                                <span class="card-name">?</span>
+                                <span class="card-orientation">?</span>
+                            </div>
+                        </div>
+                        <span class="slot-label">過去 (Past)</span>
+                    </div>
+                    
+                    <div class="tarot-placeholder" data-slot="1">
+                        <div class="card-inner">
+                            <div class="card-back"></div>
+                            <div class="card-front">
+                                <span class="card-name">?</span>
+                                <span class="card-orientation">?</span>
+                            </div>
+                        </div>
+                        <span class="slot-label">現在 (Present)</span>
+                    </div>
+                    
+                    <div class="tarot-placeholder" data-slot="2">
+                        <div class="card-inner">
+                            <div class="card-back"></div>
+                            <div class="card-front">
+                                <span class="card-name">?</span>
+                                <span class="card-orientation">?</span>
+                            </div>
+                        </div>
+                        <span class="slot-label">未來 (Future)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 牌意解析解密面板 (預設隱藏) -->
+        <section class="card interpretation-card animate-fade-in delay-200" id="interpretation-section" style="display: none;">
+            <h2 class="card-title"><i class="fa-solid fa-book-open text-accent"></i> 塔羅牌意解密解讀</h2>
+            <div id="readings-container">
+                <!-- 牌意將根據抽出的牌動態渲染於此 -->
+            </div>
+        </section>
+
+        <!-- SEO FAQ 常見問題問答區 -->
+        <section class="card faq-card animate-fade-in delay-300">
+            <h2 class="card-title"><i class="fa-solid fa-circle-question text-accent"></i> 塔羅牌占卜常見問答 (FAQ)</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3 class="faq-question">Q1：線上塔羅牌占卜真的準確嗎？</h3>
+                    <div class="faq-answer">
+                        塔羅牌是一種「投射心靈」的潛意識工具。線上占卜透過亂數生成（Random Number Generation）抽牌，本質上是與您抽牌那一瞬間的意念與潛意識產生共鳴。只要您在抽牌前保持內心平靜、專注於問題，所抽出來的牌意都能為您帶來非常有用的內在指引與警示。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Q2：什麼是塔羅牌的「正位」與「逆位」？</h3>
+                    <div class="faq-answer">
+                        *   **正位 (Upright)**：卡牌正向朝向您。通常代表能量以順暢、顯而易見或積極正面地方式展現。
+                        *   **逆位 (Reversed)**：卡牌上下顛倒朝向您。通常代表能量受到阻礙、過度發揮、被壓抑、或者需要進行內在的反思與調整，並不一定代表完全的壞事。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Q3：占卜塔羅牌有什麼禁忌嗎？</h3>
+                    <div class="faq-answer">
+                        最核心的原則是 **「不重複占卜相同問題」**。如果您對同一個問題（例如：他愛我嗎？）在短時間內反覆抽牌，代表您內心不願面對現實，此時抽出來的牌意將會失去準確性。建議同一個問題在情況有重大改變前（通常是 1-3 個月內），只占卜一次。
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer class="app-footer">
+        <div class="container">
+            <p>© 2026 MysticTarot. 奧秘之星線上古典塔羅牌占卜。</p>
+            <p class="github-badge">託管於 GitHub Pages | 純本地解碼安全保密</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript 邏輯 -->
+    <script src="app.js"></script>
+</body>
+</html>
