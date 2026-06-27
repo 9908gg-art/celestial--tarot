@@ -81,7 +81,7 @@ body {
 /* 頁首 Header */
 .app-header {
     position: relative;
-    padding: 60px 0 30px;
+    padding: 24px 0 12px;
     text-align: center;
     background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.15) 0%, transparent 60%);
 }
@@ -90,9 +90,9 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     background: rgba(212, 175, 55, 0.05);
-    padding: 8px 20px;
+    padding: 4px 12px;
     border-radius: 50px;
     border: 1px solid var(--border-color);
 }
@@ -110,7 +110,7 @@ body {
 }
 
 .app-header h1 {
-    font-size: 2.35rem;
+    font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 12px;
     background: linear-gradient(135deg, #ffffff 40%, #fbbf24 100%);
@@ -120,7 +120,7 @@ body {
 
 .app-header .subtitle {
     color: var(--text-secondary);
-    font-size: 1rem;
+    font-size: 0.85rem;
     max-width: 550px;
     margin: 0 auto;
 }
@@ -138,10 +138,10 @@ body {
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
-    padding: 26px;
+    padding: 14px 18px;
     box-shadow: var(--shadow-md);
     transition: var(--transition-smooth);
-    margin-bottom: 24px;
+    margin-bottom: 12px;
 }
 
 .card:hover {
@@ -150,9 +150,9 @@ body {
 }
 
 .card-title {
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -162,25 +162,25 @@ body {
 .mode-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 12px;
 }
 
 .btn-mode {
     background: rgba(255, 255, 255, 0.01);
     border: 1px solid var(--border-color);
     color: var(--text-primary);
-    padding: 20px;
+    padding: 10px 14px;
     border-radius: var(--radius-sm);
     cursor: pointer;
     text-align: left;
     display: flex;
     align-items: flex-start;
-    gap: 16px;
+    gap: 10px;
     transition: var(--transition-smooth);
 }
 
 .btn-mode i {
-    font-size: 1.75rem;
+    font-size: 1.3rem;
     color: var(--text-secondary);
     margin-top: 4px;
     transition: var(--transition-smooth);
@@ -193,7 +193,7 @@ body {
 }
 
 .mode-title {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: var(--text-primary);
 }
@@ -221,13 +221,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
     border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-    padding-bottom: 16px;
+    padding-bottom: 8px;
 }
 
 .step-indicator {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 500;
     color: var(--color-accent-light);
 }
@@ -235,14 +235,14 @@ body {
 .tarot-table {
     display: flex;
     justify-content: center;
-    padding: 30px 0;
-    min-height: 280px;
+    padding: 15px 0;
+    min-height: 200px;
 }
 
 .spread-container {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
     width: 100%;
 }
 
@@ -251,8 +251,8 @@ body {
    ========================================================================== */
 
 .tarot-placeholder {
-    width: 140px;
-    height: 230px;
+    width: 100px;
+    height: 165px;
     perspective: 1000px; /* 3D 視距 */
     cursor: pointer;
     display: flex;
@@ -306,7 +306,7 @@ body {
     content: "\f005"; /* 星星圖示 */
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
-    font-size: 2rem;
+    font-size: 1.3rem;
     color: var(--color-accent);
     text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
 }
@@ -319,7 +319,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 10px;
+    padding: 8px 6px;
     box-shadow: var(--shadow-neon-gold) inset;
 }
 
@@ -330,19 +330,19 @@ body {
 
 /* 牌面內部圖示 */
 .card-illustration {
-    font-size: 2.75rem;
+    font-size: 1.8rem;
     color: var(--color-accent);
     text-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
-    margin-top: 25px;
+    margin-top: 10px;
 }
 
 .card-name {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: var(--text-primary);
     letter-spacing: 1px;
     border-top: 1px solid rgba(212, 175, 55, 0.2);
-    padding-top: 8px;
+    padding-top: 4px;
     width: 90%;
 }
 
@@ -364,10 +364,10 @@ body {
 
 .reading-block {
     border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-    padding: 24px 0;
+    padding: 12px 0;
     display: grid;
-    grid-template-columns: 140px 1fr;
-    gap: 24px;
+    grid-template-columns: 100px 1fr;
+    gap: 14px;
     align-items: flex-start;
 }
 
@@ -384,12 +384,12 @@ body {
     text-align: center;
     background: rgba(255, 255, 255, 0.01);
     border: 1px solid rgba(212, 175, 55, 0.1);
-    padding: 16px 10px;
+    padding: 8px 6px;
     border-radius: var(--radius-sm);
 }
 
 .reading-card-name {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: var(--color-accent-light);
     margin-bottom: 4px;
@@ -415,10 +415,10 @@ body {
 }
 
 .reading-text h3 {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .reading-text .desc-meta {
@@ -429,7 +429,7 @@ body {
 }
 
 .reading-text p {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: #e2e8f0;
     text-align: justify;
 }
@@ -440,9 +440,9 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    padding: 12px 24px;
+    padding: 8px 16px;
     border-radius: var(--radius-sm);
     border: none;
     cursor: pointer;
