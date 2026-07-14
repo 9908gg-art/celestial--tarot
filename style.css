@@ -567,7 +567,7 @@ body {
     
     .tarot-placeholder {
         width: 100px;
-        height: 164px; /* 小螢幕缩小卡牌比例 */
+        height: 164px; /* 小螢幕小卡牌比例 */
     }
     
     .card-illustration {
@@ -579,4 +579,15 @@ body {
         font-size: 0.75rem;
         padding-top: 6px;
     }
+}
+
+/* Amazon Affiliate Card Hover Effects */
+.amz-item-card {
+    transition: var(--transition-smooth);
+}
+.amz-item-card:hover {
+    background: rgba(212, 175, 55, 0.08) !important;
+    border-color: var(--color-accent) !important;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.15), 0 0 15px rgba(212, 175, 55, 0.1);
 }
